@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { OpenAI } from "openai/client.js";
+import OpenAI from "openai";
 import express from "express";
 import cors from "cors";
 const corsOptions = {
