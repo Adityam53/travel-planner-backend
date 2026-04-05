@@ -86,6 +86,9 @@ app.get("/api/travel-plan", async (req, res) => {
     }
   } catch (e) {
     console.error("Error Detail:", e.response?.data || e.message);
+    return res
+      .status(500)
+      .json({ error: "API Request Failed", details: e.message });
   }
 });
 
