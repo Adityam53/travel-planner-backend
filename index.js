@@ -55,7 +55,7 @@ app.get("/health", (req, res) => {
 app.get("/api/travel-plan", async (req, res) => {
   const city = (req.query.city || "Tokyo").toString();
   const country = (req.query.country || "Japan").toString();
-  const days = Number(req.query.days || 3) || 3;
+  const days = Number(req.query.days || 3);
 
   const USER_PROMPT = `Create a ${days} day travel plan for ${country},${city} for a first time visitor.`;
 
