@@ -60,6 +60,10 @@ app.get("/api/travel-plan", async (req, res) => {
   const USER_PROMPT = `Create a ${days} day travel plan for ${country},${city} for a first time visitor.`;
 
   console.log("Sending request to OpenRouter...");
+  console.log(
+    "Using Key:",
+    process.env.OPENAPIROUTERKEY?.substring(0, 10) + "...",
+  );
 
   try {
     const resp = await client.chat.completions.create({
