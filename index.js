@@ -31,9 +31,7 @@ Use exactly this schema and field names:
   "duration_days": number,
   "top_attractions": ["string", "string", "string"],
   "sample_itinerary": [
-    {"day": 1, "plan": "string"},
-    {"day": 2, "plan": "string"},
-    {"day": 3, "plan": "string"}
+    {"day": number, "plan": "string"}
   ],
   "estimated_budget_eur": { "low": number, "mid": number, "high": number },
   "local_tips": ["string", "string"]
@@ -55,7 +53,7 @@ app.get("/health", (req, res) => {
 app.get("/api/travel-plan", async (req, res) => {
   const city = (req.query.city || "Tokyo").toString();
   const country = (req.query.country || "Japan").toString();
-  const days = Number(req.query.days || 3);
+  const days = Number(req.query.days || 3) || 3;
 
   const USER_PROMPT = `Create a ${days} day travel plan for ${country},${city} for a first time visitor.`;
 
