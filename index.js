@@ -51,9 +51,9 @@ app.get("/health", (req, res) => {
 });
 
 app.get("/api/travel-plan", async (req, res) => {
-  const city = (req.query.city || "Tokyo").toString();
-  const country = (req.query.country || "Japan").toString();
-  const days = Number(req.query.days || 3) || 3;
+  const city = (req.query.city || "Paris").toString();
+  const country = (req.query.country || "France").toString();
+  const days = Number(req.query.days || 7) || 3;
 
   const USER_PROMPT = `Generate a ${days}-day itinerary for ${city}, ${country} with specific places and short descriptions. No generic content.`;
   console.log("Sending request to OpenRouter...");
