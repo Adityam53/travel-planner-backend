@@ -55,7 +55,7 @@ app.get("/api/travel-plan", async (req, res) => {
   const country = (req.query.country || "Japan").toString();
   const days = Number(req.query.days || 3) || 3;
 
-  const USER_PROMPT = `Create a detailed ${days}-day travel plan for ${city}, ${country} for a first-time visitor. Each day should include specific attractions or activities with brief descriptions, realistic pacing, and a mix of sightseeing, food, and local experiences. Avoid generic phrases and be specific.`;
+  const USER_PROMPT = `Generate a ${days}-day itinerary for ${city}, ${country} with specific places and short descriptions. No generic content.`;
   console.log("Sending request to OpenRouter...");
   console.log(
     "Using Key:",
