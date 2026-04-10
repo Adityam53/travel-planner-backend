@@ -18,7 +18,7 @@ const client = new OpenAI({
   apiKey: process.env.OPENAPIROUTERKEY,
 });
 
-const MODEL = "nvidia/nemotron-3-nano-30b-a3b:free";
+const MODEL = "google/gemini-3-flash-preview";
 
 const SYSTEM_PROMPT = `
 You are an AI assistant acting as a helpful travel agent.
